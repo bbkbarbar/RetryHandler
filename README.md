@@ -4,6 +4,15 @@ is an object what can be used for easy handling that case
 
 ### Current version: `1.0.0`
 
+### Maven dependecy:
+```pom
+	<dependency>
+		<groupId>hu.barbar</groupId>
+		<artifactId>RetryHandler</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+```
+
 ### Example usage
 ```java
 int MAX_RETRY_COUNT = 3;
