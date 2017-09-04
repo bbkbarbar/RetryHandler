@@ -11,24 +11,17 @@ RetryHandler.ResultAfterMultipleRetries ram = new RetryHandler(MAX_RETRY_COUNT, 
 			
 	@Override
 	public Object doProblematicJob() throws Exception {
+		
 		// Do something that sometimes can throws exceptions..
+		objectWhatDoesPotentiallyProblematicCodeParts.doYourJob();
+		return objectWhatDoesPotentiallyProblematicCodeParts.getYourResult();
 		
-		ExampleApp.iForSimulateMultipleTypesOfExceptionsInProblematicCodePart++;
-		
-		if(ExampleApp.iForSimulateMultipleTypesOfExceptionsInProblematicCodePart==1){
-			throw new IOException("Message of the IOException. :)");
-		}else
-		if(ExampleApp.iForSimulateMultipleTypesOfExceptionsInProblematicCodePart==2){
-			throw new SocketTimeoutException("Message of the SocketTimeoutException. :)");
-		}else{
-			return new String("This is the result of the problematic code part after a successfully attemp when there were no excption..");
-		}
 	}
 	
 }.run();
 
 if(ram.isDoneSuccessfully()){
-	System.out.println("Result: " + ram.getResultString());
+	System.out.println("Result: " + ram.getResult());
 	
 	System.out.println("\nBut in this case you can get the exception list what was thrown in the prevous attemps:\n");
 	System.out.println("Cought exceptions:\n" + ram.getStackTraces());
