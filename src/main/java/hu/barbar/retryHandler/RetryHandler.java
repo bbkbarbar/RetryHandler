@@ -97,8 +97,9 @@ public abstract class RetryHandler {
 					res.markAsSuccessfullyDone();
 				}
 			} catch (Exception e) {
-				retryCount++;
 				res.addCoughtException(e);
+				this.onTryFails(retryCount, e);
+				retryCount++;
 			}
 			
 			if( !res.successfullyDone ){
@@ -114,5 +115,12 @@ public abstract class RetryHandler {
 		return res;
 		
 	}
+
+	/**
+	 * This method can be overridden if neccessarry
+	 * @param currentRetryCount the count of current attempts
+	 * @param e contains the exception instance what has been throwed.
+	 */
+	public void onTryFails(int currentRetryCount, Exception e) {}
 
 }
