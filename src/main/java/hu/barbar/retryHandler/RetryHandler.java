@@ -4,6 +4,8 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
 
+import hu.barbar.retryHandler.util.RetryParams;
+
 
 /**
  * RetryHandler is an object what can be used for easy handling that case 
@@ -80,6 +82,11 @@ public abstract class RetryHandler {
 	public RetryHandler(int maxRetryAttemps, long delayBetweenRetries){
 		this.maxRetryCount = (maxRetryAttemps<1?1:maxRetryAttemps);
 		this.delayInMs = (delayBetweenRetries<0?0:delayBetweenRetries);
+	}
+	
+	public RetryHandler(RetryParams retryParams){
+		this.maxRetryCount = retryParams.getMaxRetryCount();
+		this.delayInMs = retryParams.getDelayInMs();
 	}
 	
 	public abstract Object doProblematicJob() throws Exception;

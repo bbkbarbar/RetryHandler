@@ -2,14 +2,14 @@
 is an object what can be used for easy handling that case 
 <br> when there need to handle several attempts to re-run a potentially problematic code part
 
-### Current version: `1.0.1`
+### Current version: `1.0.2`
 
 ### Maven dependecy:
 ```pom
 	<dependency>
 		<groupId>hu.barbar</groupId>
 		<artifactId>RetryHandler</artifactId>
-		<version>1.0.1</version>
+		<version>1.0.2</version>
 	</dependency>
 ```
 
@@ -18,7 +18,10 @@ is an object what can be used for easy handling that case
 int MAX_RETRY_COUNT = 3;
 int DELAY_IN_MS_BETWEEN_RETRIES = 1000;
 
-RetryHandler.ResultAfterMultipleRetries ram = new RetryHandler(MAX_RETRY_COUNT, DELAY_IN_MS_BETWEEN_RETRIES) {
+RetryParams retryParams = new RetryParams(MAX_RETRY_COUNT, 	DELAY_IN_MS_BETWEEN_RETRIES);
+
+//RetryHandler.ResultAfterMultipleRetries ram = new RetryHandler(MAX_RETRY_COUNT, DELAY_IN_MS_BETWEEN_RETRIES) {
+RetryHandler.ResultAfterMultipleRetries ram = new RetryHandler(retryParams) {
 			
 	@Override
 	public Object doProblematicJob() throws Exception {
