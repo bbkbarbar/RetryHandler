@@ -2,7 +2,18 @@
 is an object what can be used for easy handling that case 
 <br> when there need to handle several attempts to re-run a potentially problematic code part
 
-## Example usage
+### Current version: `1.0.1`
+
+### Maven dependecy:
+```pom
+	<dependency>
+		<groupId>hu.barbar</groupId>
+		<artifactId>RetryHandler</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+```
+
+### Example usage
 ```java
 int MAX_RETRY_COUNT = 3;
 int DELAY_IN_MS_BETWEEN_RETRIES = 1000;
