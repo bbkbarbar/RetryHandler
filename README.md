@@ -9,7 +9,7 @@ is an object what can be used for easy handling that case
 	<dependency>
 		<groupId>hu.barbar</groupId>
 		<artifactId>RetryHandler</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.1</version>
 	</dependency>
 ```
 
