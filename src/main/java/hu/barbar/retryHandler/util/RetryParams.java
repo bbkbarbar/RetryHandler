@@ -24,4 +24,8 @@ public class RetryParams {
 		return this.delayInMs;
 	}
 	
+	public String toString(){
+		return "Max count: " + this.maxRetryCount + " Delay: " + this.delayInMs + "ms (Timeout: " + (this.delayInMs*this.maxRetryCount)/1000 + "s)";
+	}
+	
 }

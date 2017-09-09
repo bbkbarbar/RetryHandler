@@ -2,18 +2,21 @@
 is an object what can be used for easy handling that case
 <br> when there need to handle several attempts to re-run a potentially problematic code part
 
-### Current version: `1.0.2`
+### Current version: `1.0.3`
 
 ### Maven dependecy:
 ```pom
 	<dependency>
 		<groupId>hu.barbar</groupId>
 		<artifactId>RetryHandler</artifactId>
-		<version>1.0.2</version>
+		<version>1.0.3</version>
 	</dependency>
 ```
 
 ### Change log
+
+#### 1.0.3
+* toString method added for RetryParams class
 
 #### 1.0.2
 * RetryParams class added
